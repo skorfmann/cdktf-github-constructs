@@ -74,4 +74,21 @@ export class Repository extends Resource {
       permission,
     })
   }
+
+  public protectBranch(branch: string): void {
+    new Github.BranchProtection(this, `${this.name}-protection`, {
+      repository: this.name,
+      branch,
+    })
+  }
+
+  public requirePullRequestReviews(count: number, branch: string = 'master'): void {
+    new Github.BranchProtection(this, `${this.name}-protection`, {
+      repository: this.name,
+      branch,
+      requiredPullRequestReviews: [{
+        requiredApprovingReviewCount: count,
+      }],
+    })
+  }
 }

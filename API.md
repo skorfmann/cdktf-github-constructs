@@ -126,6 +126,33 @@ addTeam(team: Team, permission: RepositoryPermissions): void
 
 
 
+#### protectBranch(branch) <a id="cdktf-github-constructs-repository-protectbranch"></a>
+
+
+
+```ts
+protectBranch(branch: string): void
+```
+
+* **branch** (<code>string</code>)  *No description*
+
+
+
+
+#### requirePullRequestReviews(count, branch?) <a id="cdktf-github-constructs-repository-requirepullrequestreviews"></a>
+
+
+
+```ts
+requirePullRequestReviews(count: number, branch?: string): void
+```
+
+* **count** (<code>number</code>)  *No description*
+* **branch** (<code>string</code>)  *No description*
+
+
+
+
 
 
 ## class Team  <a id="cdktf-github-constructs-team"></a>
