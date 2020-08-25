@@ -17,7 +17,7 @@ export class Team extends Resource {
   }
 
   public addMember(member: Member): void {
-    new Github.TeamMembership(this, `membership-${this.resource.name}`, {
+    new Github.TeamMembership(this, `membership-${this.resource.name}-${member.name}`, {
       username: member.name,
       teamId: this.resource.id!,
       role: member.role,
