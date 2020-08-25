@@ -1,8 +1,8 @@
 const { JsiiProject, Semver } = require('projen');
 
-const cdktfVersion = Semver.caret('0.0.15')
+const cdktfVersion = Semver.caret('0.0.16')
 const constructsVersion = Semver.caret('3.0.0')
-const githubProviderVersion = Semver.caret('0.0.5')
+const githubProviderVersion = Semver.caret('0.0.9')
 
 const project = new JsiiProject({
   name: "cdktf-github-constructs",
@@ -23,5 +23,9 @@ const project = new JsiiProject({
     '@cdktf/provider-github': githubProviderVersion
   }
 });
+
+project.gitignore.exclude('**/*.js')
+project.gitignore.exclude('**/*.d.ts')
+project.gitignore.exclude('package-lock.json')
 
 project.synth();

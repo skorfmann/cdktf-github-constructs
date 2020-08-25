@@ -20,7 +20,7 @@ export class Member extends Resource {
     const { isOwner = false, teams } = config;
 
     if (!isOwner) {
-      new Github.Membership(this, 'membership', {
+      new Github.Membership(this, `${this.name}-membership`, {
         username: name,
         role: 'member',
       })
